@@ -11,10 +11,12 @@
 		"@ant-design/icons-vue": "^6.1.0",
 		"ant-design-vue": "^3.2.10",
 		"dayjs": "^1.11.4",
+		"echarts": "^5.3.3",
 		"pinia": "^2.0.17",
 		"sass": "^1.54.0",
 		"unplugin-vue-components": "^0.21.2",
 		"vue": "^3.2.37",
+		"vue-echarts": "^6.2.3",
 		"vue-router": "4.0.1"
 	},
 	"devDependencies": {

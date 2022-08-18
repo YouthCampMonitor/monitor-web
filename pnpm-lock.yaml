@@ -7,6 +7,7 @@ specifiers:
   ant-design-vue: ^3.2.10
   autoprefixer: 10.4.2
   dayjs: ^1.11.4
+  echarts: ^5.3.3
   pinia: ^2.0.17
   postcss: 8.4.8
   sass: ^1.54.0
@@ -15,6 +16,7 @@ specifiers:
   unplugin-vue-components: ^0.21.2
   vite: ^3.0.3
   vue: ^3.2.37
+  vue-echarts: ^6.2.3
   vue-router: 4.0.1
   vue-tsc: ^0.38.9
 
@@ -22,10 +24,12 @@ dependencies:
   '@ant-design/icons-vue': 6.1.0_vue@3.2.37
   ant-design-vue: 3.2.10_vue@3.2.37
   dayjs: 1.11.4
+  echarts: 5.3.3
   pinia: 2.0.17_j6bzmzd4ujpabbp5objtwxyjp4
   sass: 1.54.0
   unplugin-vue-components: 0.21.2_vite@3.0.3+vue@3.2.37
   vue: 3.2.37
+  vue-echarts: 6.2.3_echarts@5.3.3+vue@3.2.37
   vue-router: 4.0.1_vue@3.2.37
 
 devDependencies:
@@ -33,7 +37,7 @@ devDependencies:
   '@vitejs/plugin-vue': 3.0.1_vite@3.0.3+vue@3.2.37
   autoprefixer: 10.4.2_postcss@8.4.8
   postcss: 8.4.8
-  tailwindcss: 3.0.23_autoprefixer@10.4.2
+  tailwindcss: 3.0.23_kvgaeslaydmfmwn56hs6sufx64
   typescript: 4.7.4
   vite: 3.0.3_sass@1.54.0
   vue-tsc: 0.38.9_typescript@4.7.4
@@ -539,6 +543,13 @@ packages:
 
   /dom-scroll-into-view/2.0.1:
     resolution: {integrity: sha512-bvVTQe1lfaUr1oFzZX80ce9KLDlZ3iU+XGNE/bz9HnGdklTieqsbmsLHe+rT2XWqopvL0PckkYqN7ksmm5pe3w==}
+    dev: false
+
+  /echarts/5.3.3:
+    resolution: {integrity: sha512-BRw2serInRwO5SIwRviZ6Xgm5Lb7irgz+sLiFMmy/HOaf4SQ+7oYqxKzRHAKp4xHQ05AuHw1xvoQWJjDQq/FGw==}
+    dependencies:
+      tslib: 2.3.0
+      zrender: 5.3.2
     dev: false
 
   /electron-to-chromium/1.4.203:
@@ -1094,6 +1105,10 @@ packages:
     resolution: {integrity: sha512-p3VT+cOEgxFsRRA9X4lkI1E+k2/CtnKtU4gcxyaCUreilL/vqI6CdZ3wxVUx3UOUg+gnUOQQcRI7BmSI656MYA==}
     dev: false
 
+  /resize-detector/0.3.0:
+    resolution: {integrity: sha512-R/tCuvuOHQ8o2boRP6vgx8hXCCy87H1eY9V5imBYeVNyNVpuL9ciReSccLj2gDcax9+2weXy3bc8Vv+NRXeEvQ==}
+    dev: false
+
   /resize-observer-polyfill/1.5.1:
     resolution: {integrity: sha512-LwZrotdHOo12nQuZlHEmtuXdqGoOD0OhaxopaNFxWzInpEgaLWoVuAMbTzixuosCx2nEG58ngzW3vxdWoxIgdg==}
     dev: false
@@ -1175,12 +1190,13 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
-  /tailwindcss/3.0.23_autoprefixer@10.4.2:
+  /tailwindcss/3.0.23_kvgaeslaydmfmwn56hs6sufx64:
     resolution: {integrity: sha512-+OZOV9ubyQ6oI2BXEhzw4HrqvgcARY38xv3zKcjnWtMIZstEsXdI9xftd1iB7+RbOnj2HOEzkA0OyB5BaSxPQA==}
     engines: {node: '>=12.13.0'}
     hasBin: true
     peerDependencies:
       autoprefixer: ^10.0.2
+      postcss: ^8.0.9
     dependencies:
       arg: 5.0.2
       autoprefixer: 10.4.2_postcss@8.4.8
@@ -1217,6 +1233,10 @@ packages:
     engines: {node: '>=8.0'}
     dependencies:
       is-number: 7.0.0
+
+  /tslib/2.3.0:
+    resolution: {integrity: sha512-N82ooyxVNm6h1riLCoyS9e3fuJ3AMG2zIZs2Gd1ATcSFjSA23Q0fzjjZeh0jbJvWVDZ0cJT8yaNNaaXHzueNjg==}
+    dev: false
 
   /typescript/4.7.4:
     resolution: {integrity: sha512-C0WQT0gezHuw6AdY1M2jxUO83Rjf0HP7Sk1DtXj6j1EwkQNZrHAg2XPWlq62oqEhYvONq5pkC2Y9oPljWToLmQ==}
@@ -1333,6 +1353,23 @@ packages:
       vue: 3.2.37
     dev: false
 
+  /vue-echarts/6.2.3_echarts@5.3.3+vue@3.2.37:
+    resolution: {integrity: sha512-xHzUvgsgk/asJTcNa8iVVwoovZU3iEUHvmBa3bzbiP3Y6OMxM1YXsoWOKVmVVaUusGs4ob4pSwjwNy2FemAz9w==}
+    requiresBuild: true
+    peerDependencies:
+      '@vue/composition-api': ^1.0.5
+      echarts: ^5.1.2
+      vue: ^2.6.12 || ^3.1.1
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dependencies:
+      echarts: 5.3.3
+      resize-detector: 0.3.0
+      vue: 3.2.37
+      vue-demi: 0.13.6_vue@3.2.37
+    dev: false
+
   /vue-router/4.0.1_vue@3.2.37:
     resolution: {integrity: sha512-2C2nRxA2nCusgJyUpvcbd9Bnc9kACp/VLUCK4drXtgeRXHjQliZJcgjjP268vkGvvEKun9jjp8Ic1PpzUgbYKg==}
     peerDependencies:
@@ -1394,3 +1431,9 @@ packages:
     resolution: {integrity: sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==}
     engines: {node: '>= 6'}
     dev: true
+
+  /zrender/5.3.2:
+    resolution: {integrity: sha512-8IiYdfwHj2rx0UeIGZGGU4WEVSDEdeVCaIg/fomejg1Xu6OifAL1GVzIPHg2D+MyUkbNgPWji90t0a8IDk+39w==}
+    dependencies:
+      tslib: 2.3.0
+    dev: false
